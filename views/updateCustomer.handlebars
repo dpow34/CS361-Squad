@@ -1,0 +1,44 @@
+<div class="jumbotron">
+  <form action="/customers" method="GET" class=field id="update-customer">
+    <fieldset>
+        <legend><h1>Edit {{update_customer.first_name}} {{update_customer.last_name}} </h1></legend>
+        <div class="row">
+            <div class = "col">
+                <label for="state">State</label>
+                <input type="text" class = "form-control" value="{{update_customer.state}}" name="state" id="state" required>
+            </div>
+            <div class="col"></div>
+            <div class = "col"></div>
+        </div>
+        
+        <div class = "row">
+            <div class = "col">
+                <label for="city">City</label>
+                <input type="text" class="form-control" value="{{update_customer.city}}" name="city" id="city" required>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>            
+        </div>
+        
+        <div class="row">
+            <div class = "col">
+                <label for="zip_code">Zip Code</label>
+                <input type="text" class="form-control" value="{{update_customer.zip_code}}" name="zip_code" id="zip_code" required>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" value="{{update_customer.phone}}" name="phone" id="phone" required>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              <button type="" class="btn btn-success" onclick="updateCustomer({{update_customer.customer_ID}})">Update Customer</button>
+            </div>
+        </div>
+    </fieldset>    
+   </form>
+</div>

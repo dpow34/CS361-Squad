@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sales</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/sales.css">
+        <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="#">The Bike Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customers.html">Customers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="repairs.html">Repairs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="items.html">Items</a>
+                </li>
+            </div>
+        </nav>
+		
+		 <!-- Form to add a Sale -->
+        <div class="jumbotron">
+          <form action="/" method="POST" class=field id="editForm" onsubmit="false">
+            <legend><h1>Enter A New Sale</h1></legend>
+              
+            <div class="row">
+                
+                <div class="form-group col-md-4">
+                  <label for="inputState" >Select A Customer</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>Mark Otto</option>
+                    <option>Jacob Thorton</option>
+                    <option>Larry Bird</option>
+                  </select>
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <label for="sale-date-input">Date</label>
+                    <input class="form-control" type="date" value="2011-08-19" id="sale-date-input">
+                </div>
+
+				<div class="form-group col-md-4">
+                  <label for="item-quantity">Number of Item</label>
+                  <input type="text" class="form-control" id="item-quantity">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="total-sale-cost">Total Cost</label>
+                  <input type="text" class="form-control" id="total-sale-cost">
+                </div>
+                
+                <div class="form-group col-md-4">
+                  <label for="itemList">Select Items</label>
+                  <select multiple class="form-control" id="itemList">
+                    <option>inner tube</option>
+                    <option>26" tire</option>
+                    <option>helmet</option>
+                    <option>saddle</option>
+                    <option>gu packs</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group col-md-8">
+                  <label for="repair-notes">The Items In the Sales Are</label>      
+                  <textarea readonly class="form-control" id="repair-notes" rows="1">item1, item2, item3</textarea>
+                </div>
+
+                <div class="form-group col-md-4" id="button-div">
+                  <button type="submit" class="btn btn-success" id="submit-button">Add Sale</button>
+                </div>
+              
+            </div>
+            
+          </form>
+        </div>
+
+		<!-- Sales Table -->
+        <div class="jumbotron">
+			<div class="container">
+                <div><h1>Sales:</h1></div>  
+                <div class="form-box">
+			
+					<input class = "search-field Sales" id="search_input" onkeyup="searchSales()" type = "text" placeholder="Enter Customer name for search"/>
+				</div>
+            </div>
+
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Date</th>
+					<th scope="col">Items</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total ($)</th>
+                    <th scope="col">Modify</th>
+                  </tr>
+                </thead>
+                <tbody id = "searchTable">
+                  <tr>
+                    <td>Mark Otto</td>
+                    <td>4/10/2020</td>
+					<td>Inner tube</td>
+                    <td>2</td>
+					<td>20</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+            </table>
+			
+		
+		
+        <script src="" async defer></script>
+    </body>
+</html>
+
+
+<script>
+
+
+function searchSales() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search_input");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("searchTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+$(function () {
+                $('#datetimepicker1').datetimepicker();
+});
+</script>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Repairs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/repairs.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="#">The Bike Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customers.html">Customers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="repairs.html">Repairs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="items.html">Items</a>
+                </li>
+            </div>
+        </nav>
+
+        <!-- Form to add a repair -->
+        <div class="jumbotron">
+          <form action="/" method="POST" class=field id="editForm" onsubmit="false">
+            <legend><h1>Enter A Repair</h1></legend>
+              
+            <div class="row">
+                
+                <div class="form-group col-md-4">
+                  <label for="inputState" >Select A Customer</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>Mark Otto</option>
+                    <option>Jacob Thorton</option>
+                    <option>Larry Bird</option>
+                  </select>
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <label for="repair-date-input">Date</label>
+                    <input class="form-control" type="date" value="2011-08-19" id="repair-date-input">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="total-repair-cost">Repair Total</label>
+                  <input type="text" class="form-control" id="total-repair-cost">
+                </div>
+                
+                <div class="form-group col-md-4">
+                  <label for="exampleFormControlSelect2">Select Repair Items</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>inner tube</option>
+                    <option>26" tire</option>
+                    <option>helmet</option>
+                    <option>saddle</option>
+                    <option>gu packs</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-8">
+                  <label for="repair-notes">Repair Notes</label>
+                  <textarea class="form-control" id="repair-notes" rows="4"></textarea>
+                </div>
+
+                <div class="form-group col-md-8">
+                  <label for="repair-notes">The Items In the Repair Are</label>      
+                  <textarea readonly class="form-control" id="repair-notes" rows="1">item1, item2, item3</textarea>
+                </div>
+
+                <div class="form-group col-md-4" id="button-div">
+                  <button type="submit" class="btn btn-success" id="submit-button">Add Repairs</button>
+                </div>
+              
+            </div>
+            
+          </form>
+        </div>
+
+        <!-- Table of Repairs -->
+        <div class="jumbotron">
+
+            <div class="container">
+                <div><h1>Repairs</h1></div>  
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Items</th>
+                    <th scope="col">Notes</th>
+                    <th scope="col">Modify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mark Otto</td>
+                    <td>5/1/2020</td>
+                    <td>103.01</td>
+                    <td>tire, inner tube</td>
+                    <td>Customer ran over some glass</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jacob Thornton</td>
+                    <td>4/13/2020</td>
+                    <td>12.00</td>
+                    <td></td>
+                    <td>Tuned shifting</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mark Otto</td>
+                    <td>4/01/2020</td>
+                    <td>35.21</td>
+                    <td>10 speed chain</td>
+                    <td>Routine chain replacement</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        
+        <script src="" async defer>
+          $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </body>
+</html>

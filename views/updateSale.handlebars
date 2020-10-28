@@ -1,0 +1,62 @@
+<div class="jumbotron">
+  <form action="/sales/reload" method="GET" class=field id="update-sale">
+    <fieldset>
+        <legend><h1>Edit The Sale</h1></legend>
+        <div class="row">
+            <div class = "col">
+                <label for="state">Customer</label>
+                <input readonly type="text" class = "form-control" value="{{update_sale.first_name}}" name="customer_name" id="customer_name">
+            </div>
+            
+            <div class = "col">
+            </div>
+        </div>
+        
+        <div class = "row">
+            <div class = "col">
+                
+            </div>
+            <div class="col"></div>
+                       
+        </div>
+
+       
+
+        <div class = "row">
+            
+       
+            
+            <div clase = "col">
+                <table class = "table table-striped table-bordered" name="items-table" id="items-table">
+                    <thead>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Quantity In Order</th>
+                        
+                    </thead>
+                    {{#each update_sale.items}}
+                    <tr class="item">
+                        <td>{{name}}</td>
+                        <td><input type="text" class="item_quantity" value="{{item_quantity}}"></td>
+                        <td><input type="hidden" class="sale_details_ID" value="{{sale_details_ID}}"></td>
+						<td><input type="hidden" class="sale_Item_ID" value="{{item_ID}}"></td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+
+            <div class = "col"></div>
+    
+        </div>
+		
+		 <div class="row">
+            
+           
+            <div class="col">
+              <button type="" class="btn btn-success" onclick="updateSale({{update_sale.sale_ID}})">Update Sale</button>
+            </div>
+        </div>
+
+    </fieldset>    
+</form>
+{{!-- <button type="" class="btn btn-success" onclick="updateSale({{update_sale.sale_ID}})">Update Sale</button> --}}
+</div>
