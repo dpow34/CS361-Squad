@@ -3,10 +3,6 @@ var express = require('express');
 var app = express();
 app.use('/static', express.static('public'));
 
-// Connect to the database
-var mysql = require('./public/js/dbcon.js');
-app.set('mysql', mysql); 
-
 // require body parser to form data handlebars from html template
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:true}));
@@ -37,6 +33,10 @@ app.use('/items', require('./public/js/items.js'));
 
 app.use('/sales', require('./public/js/sales.js'));
 
+app.use('/userProfile', require('./public/js/userProfile.js'))
+
+//TODO iomplement this
+//app.use('nearbyTrails', require )
 
 app.use(function(req,res){
   res.status(404);
