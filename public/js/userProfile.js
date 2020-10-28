@@ -5,12 +5,12 @@ module.exports = function()
 
     router.get("/", function(req, res)
     {
-        res.send('In user Profile page');
+        res.send("In user Profile page");
     })
 
     router.post("/", function(req, res)
     {
-
+        res.send("In user Profile page");
     })
 
     return router;

@@ -27,16 +27,11 @@ app.get("/", function(req, res)
 
 app.use('/customers', require('./public/js/customers.js'));
 
-app.use('/repairs', require('./public/js/repairs.js'));
 
-app.use('/items', require('./public/js/items.js'));
+app.use('/userProfile', require('./public/js/userProfile.js'));
 
-app.use('/sales', require('./public/js/sales.js'));
+app.use('/nearbyTrails', require('./public/js/nearbyTrails'));
 
-app.use('/userProfile', require('./public/js/userProfile.js'))
-
-//TODO iomplement this
-//app.use('nearbyTrails', require )
 
 app.use(function(req,res){
   res.status(404);
