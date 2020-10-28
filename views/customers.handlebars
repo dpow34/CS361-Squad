@@ -1,0 +1,91 @@
+<head>
+  <link rel="stylesheet" href="/css/customers.css">
+</head>
+
+<html>
+
+
+<!-- Form to add a customer -->
+<div class="jumbotron">
+  <form action="/customers" method="POST" class=field id="editForm" onsubmit="false">
+    <fieldset>
+        <legend><h1>Enter A New Customer</h1></legend>
+          
+          <div class="row">
+            
+            <div class="col">
+              <label for="input_first_name">First Name</label>
+              <input type="text" class="form-control" placeholder="" name="input_first_name" required>
+            </div>
+            
+            <div class="col">
+              <label for="input_last_name">Last Name</label>
+              <input type="text" class="form-control" placeholder="" name="input_last_name" required>
+            </div>
+          
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="input_state">State</label>
+              <input type="text" class="form-control" placeholder="" name="input_state" required>
+            </div>
+            <div class="col">
+              <label for="input_city">City</label>
+              <input type="text" class="form-control" placeholder="" name="input_city" required>
+            </div>
+            <div class="col">
+              <label for="input_zip_code">Zip Code</label>
+              <input type="text" class="form-control" placeholder="" name="input_zip_code" required>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class = "col">
+              <label for="input_phone">Phone Number</label>
+              <input type="text" class="form-control" placeholder="" name="input_phone" required>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              <button type="submit" class="btn btn-success">Add Customer</button>
+            </div>
+          </div>
+    
+    </fieldset>
+</form>
+</div>
+
+<!-- Customers Table -->
+<div class="jumbotron">
+
+    <div class="container">
+        <div><h1>Customers:</h1></div>  
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">City</th>
+            <th scope="col">Modify</th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each customers}}
+            <tr>
+                <td>{{first_name}}</td>
+                <td>{{last_name}}</td>
+                <td>{{city}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" onclick="editCustomer({{customer_ID}})">Edit</button>
+                    <button onclick="deleteCustomer({{customer_ID}})" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+      </table>
+    
+</div>
+</html>

@@ -1,0 +1,68 @@
+table
+{
+    text-align: center;
+    margin:auto;
+    margin-top: 10px;
+}
+
+nav .navbar-nav li a
+{
+    color: white !important;
+}
+
+nav a
+{
+    color: white !important;
+}
+
+.jumbotron
+{
+    margin-top:20px;
+}
+
+.container
+{
+    display:inline-flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+
+.container > div
+{
+    flex-grow: 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+.form-box
+{
+	background: rgba(255, 255, 255, .5);
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.search-field{
+	height: 50px;
+	padding: 10px;
+	
+}
+
+.Sales
+{
+	width: 800px;
+}
+
+.serach-btn
+{
+	height: 50px;
+	width: 150px;
+	background: #f44336;
+	border: none;
+	
+}

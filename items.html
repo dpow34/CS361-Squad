@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Items</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/items.css">
+        <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="#">The Bike Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customers.html">Customers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="repairs.html">Repairs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="items.html">Items</a>
+                </li>
+            </div>
+        </nav>
+
+		 <!-- Form to add a Sale -->
+        <div class="jumbotron">
+          <form action="/" method="POST" class=field id="editForm" onsubmit="false">
+            <legend><h1>Enter A New Item</h1></legend>
+              
+            <div class="row">
+                 <div class="col">
+					<label for="inputState" >Enter Item Name</label>
+                      <input type="text" class="form-control" placeholder="Enter Item Name">
+                 </div>
+				 
+
+				<div class="form-group col-md-4">
+                  <label for="item-quantity">Number of Item</label>
+                  <input type="text" class="form-control" id="item-quantity">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="itemCost">Individual Cost</label>
+                  <input type="text" class="form-control" id="itemCost">
+                </div>
+                
+
+                <div class="form-group col-md-4" id="button-div">
+                  <button type="submit" class="btn btn-success" id="submit-button">Add Item</button>
+                </div>
+              
+            </div>
+            
+          </form>
+        </div>
+
+        <div class="jumbotron">
+
+            <div class="container">
+                <div><h1>Items:</h1></div>  
+                
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity In Stock</th>
+                    <th scope="col">Reatil Price</th>
+				    <th scope="col">Modify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Saddle</td>
+                    <td>3</td>
+                    <td>37.00</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Inner tube</td>
+                    <td>10</td>
+                    <td>4.00</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Gu Pack</td>
+                    <td>20</td>
+                    <td>2.50</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

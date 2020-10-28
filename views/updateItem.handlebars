@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <form action="/items" method="GET" class=field id="update-item">
+    <fieldset>
+		 <legend><h1>Update Item: {{update_item.name}} </h1></legend>
+          
+        <div class="row">
+            <div class = "col">
+                <label for="name">name of item</label>
+                <input type="text" class = "form-control" value="{{update_item.name}}" name="name" id="name">
+            </div>
+            <div class="col"></div>
+            <div class = "col"></div>
+        </div>
+        
+        <div class = "row">
+            <div class = "col">
+                <label for="quantity_in_stock">quantity_in_stock</label>
+                <input type="text" class="form-control" value="{{update_item.quantity_in_stock}}" name="quantity_in_stock" id="quantity_in_stock">
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>            
+        </div>
+        
+		<div class = "row">
+            <div class = "col">
+                <label for="retail_price">Retail Prcie</label>
+                <input type="text" class="form-control" value="{{update_item.retail_price}}" name="retail_price" id="retail_price">
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>        
+			<div class="col">
+              <button type="" class="btn btn-success" onclick="updateItem({{update_item.item_ID}})">Update Item</button>
+            </div>
+        </div>
+		
+		
+		
+       
+
+    </fieldset>    
+   </form>
+</div>

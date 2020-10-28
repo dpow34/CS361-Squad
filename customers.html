@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Customers</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/customers.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="#">The Bike Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customers.html">Customers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="repairs.html">Repairs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="items.html">Items</a>
+                </li>
+            </div>
+        </nav>
+        
+        <!-- Form to add a customer -->
+        <div class="jumbotron">
+          <form action="/" method="POST" class=field id="editForm" onsubmit="false">
+            <fieldset>
+                <legend><h1>Enter A Customer</h1></legend>
+                  
+                  <div class="row">
+                    
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                  
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Street Address">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="City">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Zip code">
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class = "col">
+                      <input type="text" class="form-control" placeholder="Phone number">
+                    </div>
+                    <div class="col"></div>
+                    <div class="col">
+                      <button type="submit" class="btn btn-success">Add Customer</button>
+                    </div>
+                  </div>
+            
+            </fieldset>
+        </form>
+        </div>
+
+        <!-- Customers Table -->
+        <div class="jumbotron">
+
+            <div class="container">
+                <div><h1>Customers:</h1></div>  
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Modify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Bellport</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>Pleasanton</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Larry</td>
+                    <td>Bird</td>
+                    <td>Boston</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
