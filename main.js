@@ -15,18 +15,26 @@ var handlebars = require('express-handlebars').create(
 app.engine("handlebars", handlebars.engine);
 app.set('view engine', 'handlebars');
 
+var cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 app.set('port', 3023);
+
+let userData =
+{
+  zipCode:'1111'
+}
 
 // route for home page
 app.get("/", function(req, res)
 {
   let context = {}
   context.cssstyles = ["main.css"]
+  res.cookie("userData", userData)
   res.render('home', context);
 })
 
 app.use('/customers', require('./public/js/customers.js'));
-
 
 app.use('/userProfile', require('./public/js/userProfile.js'));
 

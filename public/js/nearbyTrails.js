@@ -10,7 +10,10 @@ module.exports = function()
 
     router.post("/", function(req, res)
     {
-        res.send("In the nearby trails page, the zipcode is " + req.body.userZip);
+        console.log(req.cookies);
+        res.send(req.cookies);
+        // res.send("In the nearby trails page, the zipcode is " + req.cookies.userData.zipCode);
+        // res.send("In the nearby trails page, the zipcode is " + req.body.userZip);
     })
 
     return router;
