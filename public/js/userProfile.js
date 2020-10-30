@@ -5,12 +5,14 @@ module.exports = function()
 
     router.get("/", function(req, res)
     {
-        res.send("In user Profile page");
+        var scripts = [{script: '/public/js/userProfilePage.js'}]
+        res.render('userProfile', scripts);
     })
 
     router.post("/", function(req, res)
     {
-        res.send("In user Profile page");
+        var scripts = [{script: '/public/js/userProfilePage.js'}]
+        res.render('userProfile', scripts);
     })
 
     return router;
