@@ -1,1 +1,4 @@
-alert("in the nearby trails page script");
+function openMapTab()
+{
+    window.open("https://google.com/maps", "_blank");
+}

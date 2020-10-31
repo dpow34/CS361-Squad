@@ -4,8 +4,11 @@ module.exports = function()
     var router = express.Router();
 
     let context = {};
-    context.jsscripts = ["userProfilePage.js"];
+    context.jsscripts = ["nearbyTrailsPage.js"];
     context.css = ["userProfile.css"];
+
+    context.trails = [{trail_name:"fun time trail", trail_length:"10", distance_to_trail:"15"},
+                    {trail_name:"sad time trail", trail_length:"100", distance_to_trail:"1"}];
 
     router.get("/", function(req, res)
     {
