@@ -3,9 +3,9 @@
 </header>
 
 <body>
-	<h2>Fill in the details to personalize your hike!</h2>
+<h2>Fill in the details to estimate your current fitness level and personalize your hike!</h2>
 	<fieldset>
-		<form method="get">
+		<form>
 			<label >Name:</label>
 			<input type="text" id="name"><br>
 			<label >Age:</label>
@@ -15,7 +15,12 @@
 			<label >Weight (lbs.):</label>
 			<input type="number" id="lbs" min="1" max="1000" required><br>
 			<input type="reset">
-			<input type="submit">
+			<button id="submit">Calculate</button>
 		</form>
 	</fieldset>
+
+	<div id="fitLevel">
+		
+	</div>
+	<script type="text/javascript" src="/js/userProfile.js"></script>
 </body>
