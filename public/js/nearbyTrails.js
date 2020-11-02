@@ -5,7 +5,7 @@ module.exports = function()
 
     let context = {};
     context.jsscripts = ["nearbyTrailsPage.js"];
-    context.css = ["userProfile.css"];
+    context.css = ["nearbyTrails.css"];
 
     context.trails = [{trail_name:"fun time trail", trail_length:"10", distance_to_trail:"15"},
                     {trail_name:"sad time trail", trail_length:"100", distance_to_trail:"1"}];
