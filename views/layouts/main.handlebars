@@ -4,10 +4,7 @@
 	<title>Chimp Trails</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    {{#each jsscripts}}
-        <script src="/static/js/{{this}}"></script>
-    {{/each}}
-
+    {{!-- takes code from context.cssstyles --}}
     {{#each cssstyles}}
         <link rel="stylesheet" href="/static/css/{{this}}">
     {{/each}}
@@ -18,8 +15,14 @@
 
 </head>
 <body>
+
     {{> navbar}}
 	{{{body}}}
 
+    {{!-- takes code from context.jsscripts --}}
+    {{#each jsscripts}}
+        <script src="/static/js/{{this}}"></script>
+    {{/each}}
+    
 </body>
 </html>
