@@ -22,7 +22,7 @@ module.exports = function()
         function geocode(){
             // function to receive lon/lat information using zipcode from cookies
             var zipcode = req.cookies.userData.zipCode;
-            axios.get('http://www.mapquestapi.com/geocoding/v1/address',{
+            return axios.get('http://www.mapquestapi.com/geocoding/v1/address',{
               params:{
                 key:'zFqc6WEQ0wFDfMKcyhV3pJJpkrxPV5bG',
                 location:zipcode
@@ -32,6 +32,35 @@ module.exports = function()
               // lat and long from response
               var lat = response.data.results[0].locations[0].latLng.lat;
               var lng = response.data.results[0].locations[0].latLng.lng;
+              // to convert zipcode to lon/lat
+              return trails(lat, lng);
+            })
+            .catch(function(error){
+              console.log(error);
+            });
+          }
+  
+          function trails(lat, lng){
+            //Retrieve trail info
+            return axios.get('https://www.hikingproject.com/data/get-trails',{
+              params:{
+                lat: lat,
+                lon: lng,
+                key:'200964084-38fe0d265a453ee01c59068d6f6d3ac9'
+              }
+            })
+            .then(function(response){
+              //Stores all the returned trail information
+              let trailInfo = response.data.trails.map((trail) => {
+                  return {
+                    // For selecting the required parameters
+                      name: trail.name,
+                      length: trail.length,
+                      longitude: trail.longitude,
+                      latitude: trail.latitude
+                  };
+              });  
+              return trailInfo
             })
             .catch(function(error){
               console.log(error);
