@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "browserify main.js -o ./public/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
+    "browserify": "^17.0.0",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0"
