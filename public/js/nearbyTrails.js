@@ -19,9 +19,10 @@ module.exports = function()
     router.post("/", function(req, res)
     {
         res.render('nearbyTrails', context);
+
         function geocode(){
             // function to receive lon/lat information using zipcode from cookies
-            var zipcode = req.cookies.userData.zipCode;
+            var zipcode = req.cookies.zipCode;
             return axios.get('http://www.mapquestapi.com/geocoding/v1/address',{
               params:{
                 key:'zFqc6WEQ0wFDfMKcyhV3pJJpkrxPV5bG',
