@@ -1,10 +1,10 @@
 <head>
-    {{!-- <link rel="stylesheet" href="/static/css/main.css"> --}}
+    {{!-- <link rel="stylesheet" href="/static/css/home.css"> --}}
 </head>
-    <header>
-        <h1>Trails just for you</h1>
-    </header>
 
+<h1 id="heading">Trails Just For You</h1>
+
+<div class="jumbotron">
     <form action="/nearbyTrails" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">ZipCode</label>
@@ -14,3 +14,4 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
