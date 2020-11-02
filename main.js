@@ -23,17 +23,13 @@ app.use(cookieParser());
 
 app.set('port', 3023);
 
-let userData =
-{
-  zipCode:'1111'
-}
-
 // route for home page
 app.get("/", function(req, res)
 {
   let context = {}
-  context.cssstyles = ["main.css"]
-  res.cookie("userData", userData)
+  context.cssstyles = ["home.css"];
+  context.jsscripts = ["homePage.js"];
+  res.cookie("zipCode", "11719");
   res.render('home', context);
 })
 
