@@ -1,4 +1,5 @@
-function openMapTab()
+function openMapTab(latitude, longitude)
 {
-    window.open("https://google.com/maps", "_blank");
+    let mapsQuery = "https://www.google.com/maps?q=" + latitude + "," + longitude;
+    window.open(mapsQuery, "_blank");
 }
