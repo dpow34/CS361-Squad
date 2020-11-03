@@ -24,7 +24,7 @@ module.exports = function()
 
         function geocode(){
           // function to receive lon/lat information using zipcode from cookies
-          var zipcode = req.cookies.userData.zipCode;
+          var zipcode = req.cookies.zipCode;
           //submitting request to mapquest
           return axios.get('http://www.mapquestapi.com/geocoding/v1/address',{
             params:{
