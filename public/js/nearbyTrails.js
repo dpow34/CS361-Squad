@@ -17,7 +17,7 @@ module.exports = function()
     {
         geocode().then(trailInfo => {
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
-          context.trailInfo = trailInfo;
+          context.trails = trailInfo;
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
         });
@@ -58,8 +58,8 @@ module.exports = function()
             let trailInfo = response.data.trails.map((trail) => {
                 return {
                   // For selecting the required parameters
-                    name: trail.name,
-                    length: trail.length,
+                    trail_name: trail.name,
+                    trail_length: trail.length,
                     longitude: trail.longitude,
                     latitude: trail.latitude
                 };
