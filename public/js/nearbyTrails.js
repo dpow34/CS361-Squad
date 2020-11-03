@@ -16,7 +16,7 @@ module.exports = function()
     router.post("/", function(req, res)
     {
         geocode().then(trailInfo => {
-          //passing received trail info to context to be rendered
+          // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trailInfo = trailInfo;
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
