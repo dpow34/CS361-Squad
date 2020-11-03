@@ -18,6 +18,7 @@ module.exports = function()
         geocode().then(trailInfo => {
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trails = trailInfo;
+          var a = seperateTrails(trailInfo, "intermediate");
           context.jsscripts = ["nearbyTrailsPage.js"];
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
@@ -62,7 +63,8 @@ module.exports = function()
                     trail_name: trail.name,
                     trail_length: trail.length,
                     longitude: trail.longitude,
-                    latitude: trail.latitude
+                    latitude: trail.latitude,
+                    difficulty : trail.difficulty
                 };
             });  
             return trailInfo
@@ -75,3 +77,65 @@ module.exports = function()
 
     return router;
 }();
+
+function seperateTrails(trialList, userFitnessLevel) 
+{
+    let intUserFitnessLevel = null;
+
+    switch (userFitnessLevel) {
+        case "beginner":
+            intUserFitnessLevel = 1;
+            break;
+        case "intermediate":
+            intUserFitnessLevel = 2;
+            break;
+        case "expert":
+            intUserFitnessLevel = 3;
+            break;
+        default:
+            break;
+    }
+
+    let seperatedTrails = 
+    {
+        easy: [],
+        medium:[],
+        hard:[]
+    }
+    
+    //iterate through the trails and add to correct level
+    trialList.forEach(element => 
+    {
+        let intTrailDifficulty = null;
+        switch (element.difficulty)
+        {
+            case "blue":
+                intTrailDifficulty = 1;
+                break;
+            case "blueBlack":
+                intTrailDifficulty = 2;
+                break;
+            case "black":
+                intTrailDifficulty = 3;
+                break;
+            default:
+                intTrailDifficulty = "unknown";
+        }
+
+        if (intUserFitnessLevel > intTrailDifficulty)
+        {
+            seperatedTrails["easy"].push(element);
+        }
+        else if (intUserFitnessLevel == intTrailDifficulty)
+        {
+            seperatedTrails["medium"].push(element);
+        }
+        else
+        {
+            seperatedTrails["hard"].push(element)
+        }
+
+    });
+
+    return seperatedTrails;
+}
