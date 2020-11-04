@@ -18,7 +18,8 @@ module.exports = function()
         geocode().then(trailInfo => {
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trails = trailInfo;
-          var a = seperateTrails(trailInfo, "intermediate");
+          //TODO: replace this with cookie val of 
+          context.seperatedTrails = seperateTrails(trailInfo, "intermediate");
           context.jsscripts = ["nearbyTrailsPage.js"];
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
@@ -78,7 +79,7 @@ module.exports = function()
     return router;
 }();
 
-function seperateTrails(trialList, userFitnessLevel) 
+function seperateTrails(trailList, userFitnessLevel) 
 {
     let intUserFitnessLevel = null;
 
@@ -104,7 +105,7 @@ function seperateTrails(trialList, userFitnessLevel)
     }
     
     //iterate through the trails and add to correct level
-    trialList.forEach(element => 
+    trailList.forEach(element => 
     {
         let intTrailDifficulty = null;
         switch (element.difficulty)
