@@ -1,15 +1,18 @@
 <header>
 	<h1>In nearbytrails</h1>
 </header>
-<table class="table table-striped table-bordered">
-<thead>
-      <tr>
-        <th scope="col">Trail Name</th>
-        <th scope="col">Length</th>
-        <th scope="col">Location</th>
-        <th scope="col">Maps Link</th>
-      </tr>
-</thead>
+
+<button type="button" class="btn" onclick="addTrailsToTable({{trails}})">Easy Trails</button>
+
+<table class="table table-striped table-bordered" id="trailTable">
+	<thead>
+		<tr>
+			<th scope="col">Trail Name</th>
+			<th scope="col">Length</th>
+			<th scope="col">Location</th>
+			<th scope="col">Maps Link</th>
+		</tr>
+	</thead>
 
 {{#each trails}}
 	<tr>

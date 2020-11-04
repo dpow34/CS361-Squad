@@ -18,7 +18,7 @@ module.exports = function()
         geocode().then(trailInfo => {
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trails = trailInfo;
-          //TODO: replace this with cookie val of 
+          //TODO: replace this with cookie val of userFitness
           context.seperatedTrails = seperateTrails(trailInfo, "intermediate");
           context.jsscripts = ["nearbyTrailsPage.js"];
           // nearbytrails page is rendered and context is passed
@@ -104,7 +104,7 @@ function seperateTrails(trailList, userFitnessLevel)
         hard:[]
     }
     
-    //iterate through the trails and add to correct level
+    //iterate through the trails and add to correct list
     trailList.forEach(element => 
     {
         let intTrailDifficulty = null;
