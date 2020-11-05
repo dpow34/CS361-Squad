@@ -125,15 +125,15 @@ function seperateTrails(trailList, userFitnessLevel)
 
         if (intUserFitnessLevel > intTrailDifficulty)
         {
-            seperatedTrails["easy"].push(element);
+            element.realitiveDifficulty = "easy";
         }
         else if (intUserFitnessLevel == intTrailDifficulty)
         {
-            seperatedTrails["medium"].push(element);
+            element.realitiveDifficulty = "medium";
         }
         else
         {
-            seperatedTrails["hard"].push(element)
+            element.realitiveDifficulty = "hard";
         }
 
     });
