@@ -53,6 +53,9 @@ app.use('/userProfile', require('./public/js/userProfile.js'));
 //this is server side-code for the nearbyTrails page (not js sent to client)
 app.use('/nearbyTrails', require('./public/js/nearbyTrails'));
 
+//this is server side-code for the gear page (not js sent to client)
+app.use('/gear', require('./public/js/gear.js'));
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
