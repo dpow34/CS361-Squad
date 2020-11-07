@@ -70,7 +70,7 @@ function display(fitLevel){
 	var htext = document.createTextNode("Your estimated current fitness level is " + fitLevel + "!");
   
 	var ptag = document.createElement("p");
-	var fitTxt = document.createTextNode("This means that whenever you are trying to personalize your hike to your current fitness level, the app will best match you with your preferred difficulty when compared to your estimated fitness level. For example, if your fitness level is estimated to be beginner, and you choose that you want to be challeneged during the hike. The app will then match you with nearby hiking trails that are more challenging than beginner trails.");
+	var fitTxt = document.createTextNode("This means that whenever you are trying to personalize your hike to your current fitness level, the app will best match you with your preferred difficulty when compared to your estimated fitness level. For example, if your fitness level is estimated to be beginner and you choose that you want to be challeneged during the hike, the app will then match you with nearby hiking trails that are more challenging than beginner trails.");
 	
     	var ptag2 = document.createElement("p");
 	var bmiTxt = document.createTextNode("This is calcualted based off your Body Mass Index (BMI).")
