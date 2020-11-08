@@ -19,7 +19,7 @@ module.exports = function()
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trails = trailInfo;
           //TODO: replace this with cookie val of userFitness
-          context.seperatedTrails = seperateTrails(trailInfo, "intermediate");
+          context.seperatedTrails = seperateTrails(trailInfo, cookies.get("fitLevel"));
           context.jsscripts = ["nearbyTrailsPage.js"];
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
