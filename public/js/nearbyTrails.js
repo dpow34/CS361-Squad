@@ -19,7 +19,7 @@ module.exports = function()
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trails = trailInfo;
           //TODO: replace this with cookie val of userFitness
-          context.seperatedTrails = seperateTrails(trailInfo, cookies.get("fitLevel"));
+          context.seperatedTrails = seperateTrails(trailInfo, req.cookies["fitLevel"]);
           context.jsscripts = ["nearbyTrailsPage.js"];
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
@@ -94,6 +94,7 @@ function seperateTrails(trailList, userFitnessLevel)
             intUserFitnessLevel = 3;
             break;
         default:
+            intUserFitnessLevel = 2;
             break;
     }
 
@@ -110,8 +111,14 @@ function seperateTrails(trailList, userFitnessLevel)
         let intTrailDifficulty = null;
         switch (element.difficulty)
         {
-            case "blue":
+            case "green":
                 intTrailDifficulty = 1;
+                break
+            case "greenBlue":
+                intTrailDifficulty = 1;
+                break;
+            case "blue":
+                intTrailDifficulty = 2;
                 break;
             case "blueBlack":
                 intTrailDifficulty = 2;
