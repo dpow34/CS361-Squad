@@ -33,20 +33,6 @@ app.get("/", function(req, res)
   res.render('home', context);
 })
 
-//moved to the userProfile server side module
-// app.get("/userProfile", function(req, res)
-// {
-//   var scripts = [{script: '/public/js/userProfile.js'}]
-//   res.render('userProfile', scripts);
-// })
-
-//moved to the nearbyTrails server side module
-// app.post("/nearbyTrails", function(req, res)
-// {
-//   var scripts = [{script: '/public/js/nearbyTrails.js'}]
-//   res.render('nearbyTrails', scripts);
-// })
-
 //this is server side-code for the userProfile page (not js sent to client)
 app.use('/userProfile', require('./public/js/userProfile.js'));
 
