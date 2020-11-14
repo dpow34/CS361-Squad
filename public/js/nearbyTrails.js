@@ -5,8 +5,8 @@ module.exports = function()
     var router = express.Router();
 
     let context = {};
-    context.jsscripts = ["userProfilePage.js"];
-    context.css = ["userProfile.css"];
+    context.jsscripts = ["nearbyTrailsPage.js"];
+    context.cssstyles = ["nearbyTrails.css"]
 
     router.get("/", function(req, res)
     {
@@ -20,7 +20,6 @@ module.exports = function()
           context.trails = trailInfo;
           //TODO: replace this with cookie val of userFitness
           context.seperatedTrails = seperateTrails(trailInfo, req.cookies["fitLevel"]);
-          context.jsscripts = ["nearbyTrailsPage.js"];
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
         });
