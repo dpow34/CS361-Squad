@@ -2,3 +2,15 @@ h1
 {
 	text-align: center;
 }
+
+.header-row
+{
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+}
+
+img
+{
+	height: 2.2em;
+	cursor: pointer;
+}
