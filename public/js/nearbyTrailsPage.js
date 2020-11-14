@@ -1,3 +1,8 @@
+window.onload = function()
+{
+    renderAllTrails();
+}
+
 function openMapTab(latitude, longitude)
 {
     let mapsQuery = "https://www.google.com/maps?q=" + latitude + "," + longitude;
@@ -13,11 +18,17 @@ function renderAllTrails()
 {
     let tableRows = $('#trailsTable > tbody > tr');
 
-
     for (let i = 0; i < tableRows.length; i++) 
     {
-        const element = tableRows[i];
-        element.style.display = "";
+        tableRows[i].style.display = "";
+        if (i%2 == 0)
+        {
+            tableRows[i].classList = ["table-active"];
+        }
+        else
+        {
+            tableRows[i].classList = [];
+        }
     }
 }
 
@@ -30,8 +41,8 @@ function sortTrails()
         return;
     }
 
+    let renderedTrails = 0;
     let tableRows = $('#trailsTable > tbody > tr');
-
 
     for (let i = 0; i < tableRows.length; i++) 
     {
@@ -43,7 +54,16 @@ function sortTrails()
         }
         else
         {
-            element.style.display = ""
+            element.style.display = "table-row";
+            if (renderedTrails%2 == 0)
+            {
+                tableRows[i].classList = ["table-active"];
+            }
+            else
+            {
+                tableRows[i].classList = [];
+            } 
+            renderedTrails++;
         }
     }
     
