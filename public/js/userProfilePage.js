@@ -6,6 +6,7 @@ window.onload = function() {
 	getCookie();
 }
 
+
 function getCookie(){
 	var decodedCookie = decodeURIComponent(document.cookie);
 	var cookieList = decodedCookie.split(';');
@@ -19,6 +20,7 @@ function getCookie(){
 		}
 	}
 }
+
 
 function setCookie(fitLevel){
 	document.cookie = "fitLevel=" + fitLevel;
@@ -46,63 +48,69 @@ submit.addEventListener("click", function(){
 });
 
 
-
 function calcFit(height, weight){
 	var bmi = (weight / height / height) * 703;
-	var level = null;
 	if (bmi >= 30){
-		level = "beginner";
+		var level = "beginner";
 	}
 	else if (25 <= bmi){
-		level = "intermediate";
+		var level = "intermediate";
 	}
 	else{
-		level = "expert";
+		var level = "expert";
 	}
-
 	return level;
-
 };
 
 
 function display(fitLevel){
+	fitLvlDisplay(fitLevel);
+	fitLvlMeaningDisplay();
+	lvlsExplainedDisplay();
+	bmiCalcImgDisplay();
+};
+
+
+function fitLvlDisplay(fitLevel){
 	var heading = document.createElement("H1");
 	var htext = document.createTextNode("Your estimated current fitness level is " + fitLevel + "!");
-  
+	heading.appendChild(htext);
+	fitDisplay.appendChild(heading);
+}
+
+
+function fitLvlMeaningDisplay(){
 	var ptag = document.createElement("p");
 	var fitTxt = document.createTextNode("This means that whenever you are trying to personalize your hike to your current fitness level, the app will best match you with your preferred difficulty when compared to your estimated fitness level. For example, if your fitness level is estimated to be beginner and you choose that you want to be challeneged during the hike, the app will then match you with nearby hiking trails that are more challenging than beginner trails.");
-	
-    	var ptag2 = document.createElement("p");
+    var ptag2 = document.createElement("p");
 	var bmiTxt = document.createTextNode("This is calcualted based off your Body Mass Index (BMI).")
-	
-    	var list = document.createElement("UL");
+	ptag.appendChild(fitTxt);
+	ptag2.appendChild(bmiTxt);
+	fitDisplay.appendChild(ptag);
+	fitDisplay.appendChild(ptag2);
+}
+
+
+function lvlsExplainedDisplay(){
+	var list = document.createElement("UL");
 	var liBeg = document.createElement("LI"); 
 	var liInt = document.createElement("LI"); 
 	var liExp = document.createElement("LI");                 
 	var liBegTxt = document.createTextNode("If your BMI is 30 or over, your estimated fitness level is beginner.");         
 	var liIntTxt = document.createTextNode("If your BMI is 25 to 30, your estimated fitness level is intermediate.");
    	var liExpTxt = document.createTextNode("If your BMI is under 25, your estimated fitness level is expert.");
-  
-    	var img = document.createElement("img");
-    	img.src = "./static/images/bmi.jpg";
-  
-        // Adds 3 elements to list
-	liBeg.appendChild(liBegTxt);     
+  	liBeg.appendChild(liBegTxt);     
 	liInt.appendChild(liIntTxt); 
 	liExp.appendChild(liExpTxt);                          
 	list.appendChild(liBeg);
 	list.appendChild(liInt);
 	list.appendChild(liExp);
-  
-	// Adds text to appropriate tag
-	heading.appendChild(htext);
-	ptag.appendChild(fitTxt);
-	ptag2.appendChild(bmiTxt);
-  
-	// Adds each tag to fitDisplay div
-	fitDisplay.appendChild(heading);
-	fitDisplay.appendChild(ptag);
-	fitDisplay.appendChild(ptag2);
 	fitDisplay.appendChild(list);
-	fitDisplay.appendChild(img);
-};
+}
+
+
+function bmiCalcImgDisplay(){
+	var img = document.createElement("img");
+    img.src = "./static/images/bmi.jpg";
+    fitDisplay.appendChild(img);
+}
