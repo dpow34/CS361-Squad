@@ -19,7 +19,7 @@ module.exports = function()
           // awaiting/fulfilling promise, calling geocode to create zipcode/retrieve trails
           context.trails = trailInfo;
           //TODO: replace this with cookie val of userFitness
-          context.seperatedTrails = seperateTrails(trailInfo, req.cookies["fitLevel"]);
+          seperateTrails(trailInfo, req.cookies["fitLevel"]);
           // nearbytrails page is rendered and context is passed
           res.render('nearbyTrails', context);
         });
@@ -78,6 +78,8 @@ module.exports = function()
     return router;
 }();
 
+const RelativeDifficulty = {"EasyAndChill":1, "MatchMyFitness":2, "ChallengeMe":3};
+
 function seperateTrails(trailList, userFitnessLevel) 
 {
     let intUserFitnessLevel = null;
@@ -125,20 +127,18 @@ function seperateTrails(trailList, userFitnessLevel)
         if (intUserFitnessLevel > intTrailDifficulty)
         {
             //easy
-            element.realitiveDifficulty = 1;
+            element.realitiveDifficulty = RelativeDifficulty.EasyAndChill;
         }
         else if (intUserFitnessLevel == intTrailDifficulty)
         {
             //medium
-            element.realitiveDifficulty = 2;
+            element.realitiveDifficulty = RelativeDifficulty.MatchMyFitness;
         }
         else
         {
             //hard
-            element.realitiveDifficulty = 3;
+            element.realitiveDifficulty = RelativeDifficulty.ChallengeMe;
         }
 
     });
-
-    return seperatedTrails;
 }
