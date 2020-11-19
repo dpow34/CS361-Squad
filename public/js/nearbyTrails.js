@@ -96,13 +96,6 @@ function seperateTrails(trailList, userFitnessLevel)
             intUserFitnessLevel = 2;
             break;
     }
-
-    let seperatedTrails = 
-    {
-        easy: [],
-        medium:[],
-        hard:[]
-    }
     
     //iterate through the trails and add to correct list
     trailList.forEach(element => 

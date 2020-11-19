@@ -1,3 +1,4 @@
+
 var submit = document.getElementById("submit");
 var fitDisplay = document.getElementById("fitLevel");
 
