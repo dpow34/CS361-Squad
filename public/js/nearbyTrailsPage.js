@@ -3,6 +3,9 @@ window.onload = function()
     renderAllTrails();
 }
 
+const RelativeDifficulty = {"EasyAndChill":1, "MatchMyFitness":2, "ChallengeMe":3};
+
+
 function openMapTab(latitude, longitude)
 {
     let mapsQuery = "https://www.google.com/maps?q=" + latitude + "," + longitude;
@@ -73,15 +76,15 @@ function getDesiredMood()
 {
     if ($("#easyAndChill").is(":checked"))
     {
-        return 1;
+        return RelativeDifficulty.EasyAndChill;
     }
     else if (($("#matchFitness").is(":checked")))
     {
-        return 2;
+        return RelativeDifficulty.MatchMyFitness;
     }
-    else if (($("#challengeMe").is(":checked")))
+    else if (($("#challengeMe").is(":checked")))  
     {
-        return 3;
+        return RelativeDifficulty.ChallengeMe;
     }
     else
     {
