@@ -91,3 +91,34 @@ function getDesiredMood()
         return null;
     }
 }
+
+function clickEasyAndChill() {
+    if (document.getElementById("matchFitness").checked) {
+            document.getElementById("matchFitness").checked = false;
+    }
+    if (document.getElementById("challengeMe").checked) {
+        document.getElementById("challengeMe").checked = false;
+    }
+}
+
+function clickMatchFitness() {
+    if (document.getElementById("easyAndChill").checked) {
+            document.getElementById("easyAndChill").checked = false;
+    }
+    if (document.getElementById("challengeMe").checked) {
+        document.getElementById("challengeMe").checked = false;
+    }
+}
+
+function clickChallengeMe() {
+    if (document.getElementById("matchFitness").checked) {
+            document.getElementById("matchFitness").checked = false;
+    }
+    if (document.getElementById("easyAndChill").checked) {
+        document.getElementById("easyAndChill").checked = false;
+    }
+}
+
+document.getElementById("easyAndChill").onchange = clickEasyAndChill;
+document.getElementById("matchFitness").onchange = clickMatchFitness;
+document.getElementById("challengeMe").onchange = clickChallengeMe;
