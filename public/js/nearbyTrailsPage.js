@@ -92,6 +92,10 @@ function getDesiredMood()
     }
 }
 
+// functions and event listeners to create mutually exclusive checkboxes
+document.getElementById("easyAndChill").onchange = clickEasyAndChill;
+document.getElementById("matchFitness").onchange = clickMatchFitness;
+document.getElementById("challengeMe").onchange = clickChallengeMe;
 function clickEasyAndChill() {
     if (document.getElementById("matchFitness").checked) {
             document.getElementById("matchFitness").checked = false;
@@ -118,7 +122,3 @@ function clickChallengeMe() {
         document.getElementById("easyAndChill").checked = false;
     }
 }
-
-document.getElementById("easyAndChill").onchange = clickEasyAndChill;
-document.getElementById("matchFitness").onchange = clickMatchFitness;
-document.getElementById("challengeMe").onchange = clickChallengeMe;
