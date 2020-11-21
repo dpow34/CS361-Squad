@@ -5,7 +5,7 @@ module.exports = function()
 
     let context = {};
     context.jsscripts = ["userProfilePage.js"];
-    context.css = ["userProfile.css"];
+    context.cssstyles = ["userProfile.css"];
 
     router.get("/", function(req, res)
     {
