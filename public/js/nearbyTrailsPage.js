@@ -123,18 +123,11 @@ function clickChallengeMe() {
     }
 }
 
-function hideOptions() {
-    var hideModalBody = document.getElementById("checkboxes");
-    if (hideModalBody.style.display === "none") {
-        hideModalBody.style.display = "block";
-    } else {
-        hideModalBody.style.display = "none";
-    }
-
+function changeButtonText() {
     var toggleOnOff = document.getElementById("switchMe");
-    if (toggleOnOff.value == "On") {
-        toggleOnOff.value = "Off";
-    } else {
+    if (toggleOnOff.value == "Off") {
         toggleOnOff.value = "On";
+    } else {
+        toggleOnOff.value = "Off";
     }
 }

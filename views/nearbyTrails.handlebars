@@ -26,7 +26,7 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-         	<div id="checkboxes">
+         	<div id="checkboxes" class="collapse">
          	<ul style="list-style: none">
          		<li><input type="checkbox" id="matchFitness"> Search Based on Fitness Data:</li>
          		<li><input type="checkbox" id="easyAndChill"> Search for Easy & Chill Trails:</li>
@@ -36,7 +36,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-        	<input type="button" class="btn btn-primary" id="switchMe" value="On" onclick="hideOptions()">
+        	<input type="button" class="btn btn-primary" data-toggle="collapse" data-target="#checkboxes" id="switchMe" value="Off" onclick="changeButtonText()">
           <button type="button" class="btn btn-success" data-dismiss="modal" onclick="sortTrails()">Save</button>
         	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
