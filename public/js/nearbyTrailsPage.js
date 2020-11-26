@@ -124,10 +124,10 @@ function clickChallengeMe() {
 }
 
 function changeButtonText() {
-    var toggleOnOff = document.getElementById("switchMe");
-    if (toggleOnOff.value == "Off") {
-        toggleOnOff.value = "On";
+    var buttonText = document.getElementById("switchMe");
+    if (buttonText.value == "Off") {
+        buttonText.value = "On";
     } else {
-        toggleOnOff.value = "Off";
+        buttonText.value = "Off";
     }
 }
