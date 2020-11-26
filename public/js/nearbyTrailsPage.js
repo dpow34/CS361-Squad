@@ -21,7 +21,7 @@ function renderAllTrails()
 {
     let tableRows = $('#trailsTable > tbody > tr');
 
-    for (let i = 0; i < tableRows.length; i++) 
+    for (let i = 0; i < tableRows.length; i++)
     {
         tableRows[i].style.display = "";
         if (i%2 == 0)
@@ -47,7 +47,7 @@ function sortTrails()
     let renderedTrails = 0;
     let tableRows = $('#trailsTable > tbody > tr');
 
-    for (let i = 0; i < tableRows.length; i++) 
+    for (let i = 0; i < tableRows.length; i++)
     {
         const element = tableRows[i];
         // last column with relDiff is hidden
@@ -65,11 +65,11 @@ function sortTrails()
             else
             {
                 tableRows[i].classList = [];
-            } 
+            }
             renderedTrails++;
         }
     }
-    
+
 }
 
 function getDesiredMood()
@@ -82,7 +82,7 @@ function getDesiredMood()
     {
         return RelativeDifficulty.MatchMyFitness;
     }
-    else if (($("#challengeMe").is(":checked")))  
+    else if (($("#challengeMe").is(":checked")))
     {
         return RelativeDifficulty.ChallengeMe;
     }
@@ -120,5 +120,21 @@ function clickChallengeMe() {
     }
     if (document.getElementById("easyAndChill").checked) {
         document.getElementById("easyAndChill").checked = false;
+    }
+}
+
+function hideOptions() {
+    var hideModalBody = document.getElementById("checkboxes");
+    if (hideModalBody.style.display === "none") {
+        hideModalBody.style.display = "block";
+    } else {
+        hideModalBody.style.display = "none";
+    }
+
+    var toggleOnOff = document.getElementById("switchMe");
+    if (toggleOnOff.value == "On") {
+        toggleOnOff.value = "Off";
+    } else {
+        toggleOnOff.value = "On";
     }
 }
