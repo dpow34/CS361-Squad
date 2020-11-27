@@ -1,17 +1,26 @@
-<head>
-    {{!-- <link rel="stylesheet" href="/static/css/home.css"> --}}
-</head>
 
 <h1 id="heading">Trails Just For You</h1>
 
-<div class="jumbotron">
-    <form action="/nearbyTrails" method="POST">
-        <div class="form-group">
-            <label for="exampleInputEmail1">ZipCode</label>
-            <input type="text" class="form-control" id="userZipInput" name="userZip" placeholder="Enter zipcode">
-            <small id="zipHelp" class="form-text text-muted">We share your information with the Zucc.</small>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-10">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <form action="/nearbyTrails" method="POST">
+                    <div class="form-row">
+                        <div class="col-10">
+                        {{!-- <label for= "exampleInputEmail1">ZipCode</label> --}}
+                        <input type="text" class="form-control" id="userZipInput" name="userZip" placeholder="Enter a zipcode to get started.">
+                        </div>  
+                        <div class="col text-center">
+                            <button type="submit" class="btn btn-success" id="zipSubmit">Submit</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <button type="submit" class="btn btn-primary" id="zipSubmit">Submit</button>
-    </form>
+        <div class="col"></div>
+    </div>
 </div>
