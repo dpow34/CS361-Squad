@@ -26,8 +26,8 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-         	<div id="checkboxes">
-         	<ul>
+         	<div id="checkboxes" class="collapse">
+         	<ul style="list-style: none">
          		<li><input type="checkbox" id="matchFitness"> Search Based on Fitness Data:</li>
          		<li><input type="checkbox" id="easyAndChill"> Search for Easy & Chill Trails:</li>
          		<li><input type="checkbox" id="challengeMe"> Search for Challenging Trails:</li>
@@ -36,7 +36,8 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-        	<button type="button" class="btn btn-success" data-dismiss="modal" onclick="sortTrails()">Save</button>
+        	<input type="button" class="btn btn-info" data-toggle="collapse" data-target="#checkboxes" id="switchMe" value="Off" onclick="changeButtonText()">
+          <button type="button" class="btn btn-success" data-dismiss="modal" onclick="sortTrails()">Save</button>
         	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
 
@@ -54,7 +55,7 @@
         <th scope="col" class="text-center">Length</th>
         <th scope="col" class="text-center">Location</th>
         <th scope="col" class="text-center">Maps Link</th>
-        
+
         {{!-- hidden column --}}
         <th scope="col" class="d-none"> relDifficuilty </th>
       </tr>
