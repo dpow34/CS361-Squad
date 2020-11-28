@@ -5,6 +5,7 @@ var fitDisplay = document.getElementById("fitLevel");
 
 window.onload = function() {
 	getCookie();
+	document.getElementById("navbarItems").children[1].classList.add("active")
 }
 
 
