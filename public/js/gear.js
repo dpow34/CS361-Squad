@@ -4,7 +4,7 @@ module.exports = function()
     var router = express.Router();
 
     let context = {};
-    context.jsscripts = ["gear.js"];
+    context.jsscripts = ["gearPage.js"];
     context.css = ["gear.css"];
 
     router.get("/", function(req, res)
