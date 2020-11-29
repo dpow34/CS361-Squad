@@ -130,4 +130,8 @@ function changeButtonText() {
     } else {
         buttonText.value = "Off";
     }
+    // Uncheck options in modal
+    document.getElementById("easyAndChill").checked = false;
+    document.getElementById("matchFitness").checked = false;
+    document.getElementById("challengeMe").checked = false;
 }
