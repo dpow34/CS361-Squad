@@ -1,6 +1,12 @@
-h1
+h2
 {
-	text-align: center;
+	color: white;
+}
+
+.modal-header, .modal-body, .modal-footer
+{
+	background-color: #343A40;
+	color: white;
 }
 
 .header-row
@@ -9,8 +15,18 @@ h1
 	padding-bottom: 1rem;
 }
 
+th, td
+{
+	color: white;
+}
+
 img
 {
 	height: 2.2em;
 	cursor: pointer;
+}
+
+body
+{
+	background-color: #343434;
 }
