@@ -130,8 +130,10 @@ function changeButtonText() {
     } else {
         buttonText.value = "Off";
     }
-    // Uncheck options in modal
+    // Uncheck all options in modal
     document.getElementById("easyAndChill").checked = false;
     document.getElementById("matchFitness").checked = false;
     document.getElementById("challengeMe").checked = false;
+    // Sorts the trails once user turns off the filter option
+    sortTrails();
 }
