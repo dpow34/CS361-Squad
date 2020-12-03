@@ -52,7 +52,8 @@ module.exports = function()
             params:{
               lat: lat,
               lon: lng,
-              key:'200964084-38fe0d265a453ee01c59068d6f6d3ac9'
+              key:'200964084-38fe0d265a453ee01c59068d6f6d3ac9',
+              maxResults: 13
             }
           })
           .then(function(response){
