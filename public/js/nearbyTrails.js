@@ -49,6 +49,7 @@ module.exports = function()
         function trails(lat, lng){
           //Retrieve trail info from hiking project
           return axios.get('https://www.hikingproject.com/data/get-trails',{
+            // Submit additional params here, find availible params here -> (https://www.hikingproject.com/data)
             params:{
               lat: lat,
               lon: lng,
